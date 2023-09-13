@@ -17,45 +17,26 @@ const config: Config = {
         "light-gray": "hsl(0, 0%, 98%)",
       },
       fontSize: {
-        "small-regular": [
+        small: [
           "14px",
           {
-            fontWeight: "300",
+            lineHeight: "140%",
           },
         ],
-        "small-semibold": [
-          "14px",
-          {
-            fontWeight: "600",
-          },
-        ],
-        "small-bold": [
-          "14px",
-          {
-            fontWeight: "800",
-          },
-        ],
-        "secondary-regular": [
+        normal: [
           "16px",
           {
-            fontWeight: "300",
-          },
-        ],
-        "secondary-semibold": [
-          "16px",
-          {
-            fontWeight: "500",
-          },
-        ],
-        "secondary-bold": [
-          "16px",
-          {
-            fontWeight: "800",
+            lineHeight: "140%",
           },
         ],
       },
       fontFamily: {
-        primary: "Nunito Sans",
+        primary: '"Nunito Sans"',
+      },
+      fontWeight: {
+        regular: "300",
+        semibold: "500",
+        bold: "800",
       },
     },
   },

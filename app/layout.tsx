@@ -1,6 +1,7 @@
 import Theme from "@/providers/theme";
 import "./globals.css";
 import type { Metadata } from "next";
+import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,11 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Theme>
-        <body className="font-primary dark:bg-black bg-white min-h-screen">
+      <body className="font-primary dark:bg-black bg-white min-h-screen">
+        <Theme>
+          <Navbar />
           {children}
-        </body>
-      </Theme>
+        </Theme>
+      </body>
     </html>
   );
 }
