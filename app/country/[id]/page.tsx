@@ -1,7 +1,6 @@
 import BackButton from "@/components/back-button";
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Page = async ({ params }: { params: { id: string } }) => {
   const countryById = require("../../../data.json").find(
@@ -9,7 +8,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   );
   return (
     <main className="bg-light-gray dark:bg-very-dark-blue-bg grow">
-      <section className="w-[min(1600px,100%)] mx-auto mt-14 flex flex-col gap-20">
+      <section className="w-[min(1300px,100%)] mx-auto mt-14 flex flex-col gap-20">
         <BackButton />
         <div className="grid lg:grid-cols-2 gap-20">
           <div className="relative">

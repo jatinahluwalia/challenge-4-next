@@ -1,7 +1,7 @@
 import Theme from "@/providers/theme";
 import "./globals.css";
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-primary dark:bg-black bg-white min-h-screen flex flex-col">
         <Theme>
-          <Navbar />
+          <Header />
           {children}
         </Theme>
       </body>
