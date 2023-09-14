@@ -36,7 +36,8 @@ const Countries = ({ countries }: Props) => {
       <div className="px-2 mx-auto w-[min(100%,1600px)] grid lg:grid-cols-4 gap-12">
         {data?.map((country: any) => (
           <CountryCard
-            key={country.id}
+            key={country.numericCode}
+            id={String(country.alpha3Code)}
             flag={country.flags.png}
             name={country.name}
             region={country.region}
