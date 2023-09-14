@@ -36,20 +36,20 @@ const Countries = ({ countries }: Props) => {
   }, [region, countries]);
 
   return (
-    <section className="min-h-screen">
-      <div className="flex justify-between mx-auto p-2 w-[min(100%,1300px)] mb-8">
-        <div className=" relative h-16 py-5 px-8 items-center flex gap-5 rounded-md overflow-hidden bg-white dark:bg-dark-blue">
-          <AiOutlineSearch size="100% " />
+    <section className="grow">
+      <div className="flex max-lg:flex-col gap-10 justify-between mx-auto px-4 w-[min(100%,1300px)] mb-8">
+        <div className="relative h-16 py-5 px-8 lg:min-w-[500px] items-center flex gap-5 rounded-md overflow-hidden bg-white dark:bg-dark-blue">
+          <AiOutlineSearch size="2rem" />
           <input
             type="text"
             placeholder="Search for a country..."
             onChange={handleSearch}
-            className="bg-transparent focus:border-none focus:outline-none"
+            className="bg-transparent focus:border-none focus:outline-none dark:placeholder:text-white grow"
           />
         </div>
         <button
           type="button"
-          className="bg-white min-w-[200px] dark:bg-dark-blue flex items-center gap-3 justify-between rounded-md shadow-md px-5 relative"
+          className="bg-white w-max min-h-[50px] min-w-[200px] dark:bg-dark-blue flex items-center gap-3 justify-between rounded-md shadow-md px-5 relative"
           onClick={() => setDropDown(!dropDown)}
         >
           <span>{region ? region : "Filter by region"}</span>
@@ -75,7 +75,7 @@ const Countries = ({ countries }: Props) => {
           <BsChevronDown />
         </button>
       </div>
-      <div className="px-2 mx-auto w-[min(100%,1300px)] grid lg:grid-cols-4 gap-12">
+      <div className="px-16 lg:px-4 mx-auto w-[min(100%,1300px)] grid lg:grid-cols-4 gap-12">
         {data?.map((country: any) => (
           <CountryCard
             key={country.numericCode}

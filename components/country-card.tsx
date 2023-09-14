@@ -32,15 +32,29 @@ const CountryCard = ({
           />
         </div>
         <div className="p-8 mb-5">
-          <h2 className="font-bold text-regular mb-5">{name}</h2>
-          <p className="text-small">
-            Population: <span className="text-dark-gray"> {population} </span>
+          <h2 className="font-bold lg:text-regular mb-5 text-2xl lg:text-xl">
+            {name}
+          </h2>
+          <p className="lg:text-small text-normal">
+            <span>Population: </span>{" "}
+            <span className="text-very-dark-blue-text font-regular dark:text-white dark:opacity-80">
+              {" "}
+              {population}{" "}
+            </span>
           </p>
-          <p className="text-small">
-            Region: <span className="text-dark-gray"> {region} </span>
+          <p className="lg:text-small text-normal">
+            <span>Region: </span>
+            <span className="text-very-dark-blue-text font-regular dark:text-white dark:opacity-80">
+              {" "}
+              {region}{" "}
+            </span>
           </p>
-          <p className="text-small">
-            Capital: <span className="text-dark-gray"> {capital} </span>
+          <p className="lg:text-small text-normal">
+            <span>Capital: </span>{" "}
+            <span className="text-very-dark-blue-text font-regular dark:text-white dark:opacity-80">
+              {" "}
+              {capital}{" "}
+            </span>
           </p>
         </div>
       </article>
