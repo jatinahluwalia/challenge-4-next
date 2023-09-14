@@ -1,5 +1,4 @@
 import Countries from "@/components/countries";
-import axios from "axios";
 
 const Home = async () => {
   // const data = await fetch(`/api/countries`);
