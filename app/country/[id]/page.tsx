@@ -4,8 +4,7 @@ import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Page = async ({ params }: { params: { id: string } }) => {
-  const res = await axios.get(`http://localhost:4000/api`);
-  const countryById = res.data.find(
+  const countryById = require("../../../data.json").find(
     (country: any) => country.alpha3Code === params.id
   );
   return (
