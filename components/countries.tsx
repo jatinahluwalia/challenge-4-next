@@ -12,6 +12,7 @@ const Countries = ({ countries }: Props) => {
   const [data, setData] = useState<any[]>(countries);
   const [dropDown, setDropDown] = useState<boolean>(false);
   const [region, setRegion] = useState<null | string>(null);
+  const [searchTimeout, setSearchTimeout] = useState<any>(0);
 
   const regions = countries?.reduce((acc: any[], country) => {
     if (acc.includes(country.region)) return acc;
@@ -20,7 +21,11 @@ const Countries = ({ countries }: Props) => {
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const regex = new RegExp(e.target.value, "i");
-    setData(countries.filter((country) => regex.test(country.name)));
+    setSearchTimeout(
+      setTimeout(() => {
+        setData(countries.filter((country) => regex.test(country.name)));
+      }, 500)
+    );
   };
 
   const handleRegion = (region: string | null) => {
@@ -33,12 +38,15 @@ const Countries = ({ countries }: Props) => {
     } else {
       setData(countries);
     }
+    return () => {
+      setSearchTimeout(0);
+    };
   }, [region, countries]);
 
   return (
     <section className="grow">
       <div className="flex max-lg:flex-col gap-10 justify-between mx-auto px-4 w-[min(100%,1300px)] mb-8">
-        <div className="relative h-16 py-5 px-8 lg:min-w-[500px] items-center flex gap-5 rounded-md overflow-hidden bg-white dark:bg-dark-blue">
+        <div className="shadow-md relative h-16 py-5 px-8 lg:min-w-[500px] items-center flex gap-5 rounded-md overflow-hidden bg-white dark:bg-dark-blue">
           <AiOutlineSearch size="2rem" />
           <input
             type="text"
